@@ -1,44 +1,36 @@
-import "./App.css";
-import { ALink } from "./components/ALink";
-import provisionalLinks from "./data/provisional-prg-links";
-import { uniqueKey } from "./helpers/uniqueKey";
-import { MyLink } from "./react-app-env";
-import { ProvisonalQuestions } from "./components/ProvisonalQuestions";
-import { useState } from "react";
+import { Routes, Route } from 'react-router-dom';
+import TopBar from './components/TopBar';
+import SideMenu from './components/SideMenu';
+import ConfigModal from './components/ConfigModal';
+import { useAppStore } from './store/useAppStore';
+import VerbsPage from './pages/VerbsPage';
+import NomsPage from './pages/NomsPage';
+import VocabulariPage from './pages/VocabulariPage';
+import TraduccioPage from './pages/TraduccioPage';
+import PronomsFeblesPage from './pages/PronomsFeblesPage';
+import ConnectorsPage from './pages/ConnectorsPage';
+import FrasesFetesPage from './pages/FrasesFetesPage';
 
-function App() {
-  const [showed, setShowed] = useState<boolean>(false);
-
-  const getLinks = (): MyLink[] => {
-    return provisionalLinks;
-  };
-  const links = getLinks();
-
-  const handleButton = (): void => {
-    setShowed((prevState) => !prevState);
-  };
+export default function App() {
+  const modalAbierto = useAppStore((s) => s.modalAbierto);
 
   return (
-    <>
-      <div className="main-box">
-        <header>
-          <h1 className="title" onClick={handleButton}>
-            LINKS
-          </h1>
-          <button>1</button>
-          <button>2</button>
-        </header>
-        <main>
-          {links.map((link) => (
-            <ALink key={uniqueKey()} linkName={link.linkName} address={link.address} order={link.order} folder={link.folder} />
-          ))}
-        </main>
-        {/* <footer className={showed ? "" : "hidden-footer"}>
-          <ProvisonalQuestions />
-        </footer> */}
-      </div>
-    </>
+    <div className="app">
+      <TopBar />
+      <SideMenu />
+      <main className="zona-trabajo">
+        <Routes>
+          <Route path="/" element={null} />
+          <Route path="/verbs" element={<VerbsPage />} />
+          <Route path="/noms" element={<NomsPage />} />
+          <Route path="/vocabulari" element={<VocabulariPage />} />
+          <Route path="/traduccio" element={<TraduccioPage />} />
+          <Route path="/pronoms-febles" element={<PronomsFeblesPage />} />
+          <Route path="/connectors" element={<ConnectorsPage />} />
+          <Route path="/frases-fetes" element={<FrasesFetesPage />} />
+        </Routes>
+      </main>
+      {modalAbierto && <ConfigModal />}
+    </div>
   );
 }
-
-export default App;
