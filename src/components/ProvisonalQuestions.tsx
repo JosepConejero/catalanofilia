@@ -1,8 +1,8 @@
 export const ProvisonalQuestions = () => {
   return (
     <div>
-      <p className="catala-links"><p>He decidit de moment treure aquesta pàgina, què us sembla?</p></p>
-
+      <p className="catala-links">He decidit de moment treure aquesta pàgina, què us sembla?</p>
+      <p></p>
     </div>
   );
 

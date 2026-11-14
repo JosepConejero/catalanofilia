@@ -3,4 +3,5 @@ export const exercicesIndex = [
   "Pronoms febles",
   "Connectors",
   "Traduccions",
+  "Vocabulari",
 ];
