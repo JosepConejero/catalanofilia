@@ -14,10 +14,11 @@ export const vocabulari: string[][] = [
     'El gat dorm al sofà.',
     'El gato duerme en el sofá.',
   ],
+   [
+    'llibre',
+    'volum',
+    'libro',
+    'Estic llegint un llibre.',
+    'Estoy leyendo un libro.',
+  ],
 ];
-
-/* export const vocabulari: Record<string, string[]> = {
-  casa: ['casa', 'Vivim en una casa molt gran.', 'Vivimos en una casa muy grande.'],
-  gat: ['gato', 'El gat dorm al sofà.', 'El gato duerme en el sofá.'],
-  llibre: ['libro', 'Estic llegint un llibre.', 'Estoy leyendo un libro.'],
-}; */
