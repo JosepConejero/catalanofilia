@@ -133,6 +133,7 @@ body,
   gap: 8px;
   margin-bottom: 12px;
   justify-content: center;
+  align-items: center;
 }
 
 .fila-botones button {
@@ -142,10 +143,15 @@ body,
   border-radius: 10px;
 }
 
-/* .toggle.pulsado {
+.contador {
+  margin-left: 8px;
+  font-variant-numeric: tabular-nums;
+}
+
+.toggle.pulsado {
   background: #333;
   color: #fff;
-} */
+}
 
 .traduccio label {
   font-weight: bold;
