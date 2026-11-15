@@ -22,7 +22,7 @@ export const useAppStore = create<AppState>((set) => ({
   ajustes: { opcionDemo: false },
   toggleMenu: () => set((s) => ({ menuAbierto: !s.menuAbierto })),
   cerrarMenu: () => set({ menuAbierto: false }),
-  abrirModal: () => set({ modalAbierto: true }),
+  abrirModal: () => set({ modalAbierto: true, menuAbierto: false }),
   cerrarModal: () => set({ modalAbierto: false }),
   aplicarAjustes: (nuevos) => set({ ajustes: nuevos, modalAbierto: false }),
 }));

@@ -16,7 +16,7 @@ export default function ConfigModal() {
   }, [cerrarModal]);
 
   return (
-    <div className="modal-fondo">
+    <div className="modal-fondo" onClick={(e) => {if (e.target === e.currentTarget) cerrarModal();}}>
       <div className="modal" role="dialog" aria-modal="true">
         <button className="modal-cerrar" onClick={cerrarModal} aria-label="Tancar">
           ✕

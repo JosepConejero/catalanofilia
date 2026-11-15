@@ -1,3 +1,5 @@
+
+import { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useAppStore } from '../store/useAppStore';
 
@@ -14,6 +16,15 @@ const opciones = [
 export default function SideMenu() {
   const menuAbierto = useAppStore((s) => s.menuAbierto);
   const cerrarMenu = useAppStore((s) => s.cerrarMenu);
+
+useEffect(() => {
+    if (!menuAbierto) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') cerrarMenu();
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [menuAbierto, cerrarMenu]);
 
   if (!menuAbierto) return null;
 
