@@ -8,5 +8,5 @@
 
 ### Pendents de resoldre
 
--
+- 
 -

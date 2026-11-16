@@ -21,8 +21,8 @@ export default function TraduccioPage() {
   const toggle = (c: Clave) => setOcultos((o) => ({ ...o, [c]: !o[c] }));
 
   const campos: { clave: Clave; etiqueta: string; texto: string }[] = [
-    { clave: 'catala', etiqueta: 'Català', texto: catala },
     { clave: 'castella', etiqueta: 'Castellà', texto: castella },
+    { clave: 'catala', etiqueta: 'Català', texto: catala },
   ];
 
   return (
