@@ -1,5 +1,5 @@
 :root {
-  --barra-alto: 28px;
+  --barra-alto: 40px;
   /* tú pedías ~20px; con 28 los iconos se ven mejor, ajústalo a tu gusto */
 }
 
@@ -46,6 +46,10 @@ body,
   flex: 1;
   overflow: auto;
   padding: 16px;
+  /* background-color: rgb(194, 196, 167); */
+  background-color: lightgray;
+  /* background: #222; */
+
 }
 
 /* Menú lateral: aparece sin transición, bajo la barra superior */
@@ -179,12 +183,12 @@ body,
 }
 
 .campo-texto {
-  color: blue;
+  color: rgb(2, 2, 175);
   font-size: 20px;
   font-weight: bold;
   border: 1px solid black;
   border-radius: 5px;
-  background-color: rgb(253, 209, 209);
+  background-color: rgb(223, 229, 207);
 
   margin: 0;
   min-height: 1.4em;
@@ -194,10 +198,22 @@ body,
 
 .campo-oculto {
   background: #8d8d8d;
+  color: rgb(212, 212, 212);
   /* gris oscuro */
 }
 
 .campo-vacio {
   font-style: italic;
-  color: #888;
+  /* color: #888; */
+  color: rgb(2, 2, 175);
+}
+
+.pulsable {
+  cursor: pointer;
+}
+
+.texto-borroso {
+  filter: blur(2.5px);
+  user-select: none;
+  display: inline-block;
 }

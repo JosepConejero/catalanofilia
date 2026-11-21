@@ -8,13 +8,12 @@ interface CampoProps {
 export default function Campo({ etiqueta, texto, oculto, onToggle }: CampoProps) {
   const vacio = !texto || texto.trim() === '';
 
-  // El oculto tiene prioridad: aunque esté vacío, se muestra gris y sin texto
   let clase = 'campo-texto';
-  let contenido = texto;
+  let contenido: React.ReactNode = texto;
 
   if (oculto) {
     clase += ' campo-oculto';
-    contenido = '';
+    contenido = vacio ? '-------' : <span className="texto-borroso">? ? ? ?</span>;
   } else if (vacio) {
     clase += ' campo-vacio';
     contenido = '-------';
